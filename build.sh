@@ -22,10 +22,10 @@ node_base_tag() {
     echo node:10.22.0-alpine3.11
     ;;
   12)
-    echo node:12.18.2-alpine3.12
+    echo node:12.18.3-alpine3.12
     ;;
   14)
-    echo node:14.5.0-alpine3.12
+    echo node:14.7.0-alpine3.12
     ;;
   *)
     return 0
