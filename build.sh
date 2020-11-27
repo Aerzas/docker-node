@@ -27,6 +27,9 @@ node_base_tag() {
   14)
     echo node:14.15.1-alpine3.12
     ;;
+  15)
+    echo node:15.3.0-alpine3.12
+    ;;
   *)
     return 0
     ;;
@@ -91,4 +94,5 @@ else
   build_node 10
   build_node 12
   build_node 14
+  build_node 15
 fi
