@@ -6,7 +6,7 @@ USER root
 
 RUN set -ex; \
     # Install build packages
-    apk add --no-cache autoconf automake g++ libc6-compat make rsync; \
+    apk add --no-cache autoconf automake g++ libc6-compat libjpeg-turbo-dev libpng-dev libtool make nasm rsync; \
     # Install Git and SSH client
     apk add --no-cache git openssh-client; \
     echo -e "Host *\n  StrictHostKeyChecking accept-new" > /etc/ssh/ssh_config; \
