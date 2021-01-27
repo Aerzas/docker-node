@@ -28,7 +28,7 @@ node_base_tag() {
     echo node:14.15.4-alpine3.12
     ;;
   15)
-    echo node:15.5.1-alpine3.12
+    echo node:15.6.0-alpine3.12
     ;;
   *)
     return 0
