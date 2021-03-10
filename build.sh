@@ -19,16 +19,16 @@ node_base_tag() {
 
   case ${node_version} in
   10)
-    echo node:10.23.1-alpine3.11
+    echo node:10.24.0-alpine3.11
     ;;
   12)
-    echo node:12.20.1-alpine3.12
+    echo node:12.21.0-alpine3.12
     ;;
   14)
-    echo node:14.15.4-alpine3.12
+    echo node:14.16.0-alpine3.13
     ;;
   15)
-    echo node:15.6.0-alpine3.12
+    echo node:15.11.0-alpine3.13
     ;;
   *)
     return 0
