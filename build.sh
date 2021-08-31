@@ -91,7 +91,6 @@ if [ -n "${build_node_version}" ]; then
   build_node "${build_node_version}"
 # Build all Node versions
 else
-  build_node 10
   build_node 12
   build_node 14
   build_node 15
