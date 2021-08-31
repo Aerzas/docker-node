@@ -10,7 +10,7 @@ Docker Hub image: [https://hub.docker.com/r/aerzas/node](https://hub.docker.com/
 version: '3.5'
 services:
     php:
-        image: aerzas/node:15-1.3.0
+        image: aerzas/node:16-1.4.0
         command:
             - npm
             - start
