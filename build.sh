@@ -18,17 +18,14 @@ node_base_tag() {
   fi
 
   case ${node_version} in
-  10)
-    echo node:10.24.0-alpine3.11
-    ;;
   12)
-    echo node:12.21.0-alpine3.12
+    echo node:12.22.5-alpine3.14
     ;;
   14)
-    echo node:14.16.0-alpine3.13
+    echo node:14.17.5-alpine3.14
     ;;
-  15)
-    echo node:15.11.0-alpine3.13
+  16)
+    echo node:16.8.0-alpine3.14
     ;;
   *)
     return 0
@@ -93,5 +90,5 @@ if [ -n "${build_node_version}" ]; then
 else
   build_node 12
   build_node 14
-  build_node 15
+  build_node 16
 fi
