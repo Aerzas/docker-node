@@ -1,0 +1,55 @@
+name: Build
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - node-version: 10
+            node-image: node:12.22.10-alpine3.15
+          - node-version: 14
+            node-image: node:14.19.0-alpine3.15
+          - node-version: 16
+            node-image: node:16.14.0-alpine3.15
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build ${{ matrix.node-version }}
+        uses: docker/build-push-action@v2
+        with:
+          context: ./base
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            BUILD_NODE_IMAGE=${{ matrix.node-image }}
+          push: true
+          tags: aerzas/node:${{ matrix.node-version }}-latest,aerzas/node:${{ matrix.node-version }}-${{ github.ref_name }}
+      -
+        name: Build ${{ matrix.node-version }}-dev
+        uses: docker/build-push-action@v2
+        with:
+          context: ./dev
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            BUILD_NODE_IMAGE=aerzas/node:${{ matrix.node-version }}-${{ github.ref_name }}
+          push: true
+          tags: aerzas/node:${{ matrix.node-version }}-latest-dev,aerzas/node:${{ matrix.node-version }}-${{ github.ref_name }}-dev
