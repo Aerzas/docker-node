@@ -11,12 +11,15 @@ jobs:
     strategy:
       matrix:
         include:
-          - node-version: 10
-            node-image: node:12.22.10-alpine3.15
-          - node-version: 14
-            node-image: node:14.19.0-alpine3.15
-          - node-version: 16
-            node-image: node:16.14.0-alpine3.15
+          -
+            node-version: 14
+            node-image: node:14.19.3-alpine3.16
+          -
+            node-version: 16
+            node-image: node:16.15.1-alpine3.16
+          -
+            node-version: 18
+            node-image: node:18.4.0-alpine3.16
     steps:
       -
         name: Checkout
