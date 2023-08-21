@@ -18,8 +18,8 @@ jobs:
             node-version: 18
             node-image: node:18.13.0-alpine3.17
           -
-            node-version: 19
-            node-image: node:19.4.0-alpine3.17
+            node-version: 20
+            node-image: node:20.5.1-alpine3.18
     steps:
       -
         name: Checkout
