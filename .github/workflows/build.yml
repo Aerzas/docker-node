@@ -13,10 +13,10 @@ jobs:
         include:
           -
             node-version: 16
-            node-image: node:16.19.0-alpine3.17
+            node-image: node:16.20.2-alpine3.18
           -
             node-version: 18
-            node-image: node:18.13.0-alpine3.17
+            node-image: node:18.17.1-alpine3.18
           -
             node-version: 20
             node-image: node:20.5.1-alpine3.18
