@@ -12,9 +12,6 @@ jobs:
       matrix:
         include:
           -
-            node-version: 14
-            node-image: node:14.21.2-alpine3.17
-          -
             node-version: 16
             node-image: node:16.19.0-alpine3.17
           -
