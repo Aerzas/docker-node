@@ -19,3 +19,18 @@ services:
         ports:
             - '8080:8080'
 ```
+
+## Environment Variables
+
+| Variable                   | Default value (base) | Default value (dev) |
+|----------------------------|----------------------|---------------------|
+| **Node**                   |                      |                     |
+| `APP_ROOT`                 | `/usr/src/app`       | `/usr/src/app`      |
+| `HOME`                     | `/home/node`         | `/home/node`        |
+| **NSS wrapper (dev only)** |                      |                     |
+| `NSS_WRAPPER_GROUP`        |                      | `/tmp/group`        |
+| `NSS_WRAPPER_PASSWD`       |                      | `/tmp/passwd`       |
+| **User (dev only)**        |                      |                     |
+| `USER_HOME`                |                      | `/tmp`              |
+| `USER_GROUP`               |                      | `docker`            |
+| `USER_NAME`                |                      | `docker`            |

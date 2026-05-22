@@ -1,6 +1,7 @@
 #!/bin/sh
-if ! id -u "$(id -u)" > /dev/null 2>&1; then
-  echo "${USER_NAME}:x:$(id -u):$(id -g):${USER_NAME}:${USER_HOME}:/sbin/nologin" >> /etc/passwd;
-fi
+
+# Mock group and passwd files
+echo "${USER_GROUP}:x:$(id -g)" >> "${NSS_WRAPPER_GROUP}";
+echo "${USER_NAME}:x:$(id -u):$(id -g):${USER_NAME}:${USER_HOME}:/sbin/nologin" >> "${NSS_WRAPPER_PASSWD}";
 
 exec "$@"
