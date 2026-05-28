@@ -7,7 +7,6 @@ Docker Hub image: [https://hub.docker.com/r/aerzas/node](https://hub.docker.com/
 ## Docker compose example
 
 ```yaml
-version: '3.5'
 services:
     php:
         image: aerzas/node:26-latest
@@ -27,6 +26,7 @@ services:
 | **Node**                   |                      |                     |
 | `APP_ROOT`                 | `/usr/src/app`       | `/usr/src/app`      |
 | `HOME`                     | `/home/node`         | `/home/node`        |
+| `NPM_CONFIG_PREFIX`        | `/home/node/.npm`    | `/home/node/.npm`   |
 | **NSS wrapper (dev only)** |                      |                     |
 | `NSS_WRAPPER_GROUP`        |                      | `/tmp/group`        |
 | `NSS_WRAPPER_PASSWD`       |                      | `/tmp/passwd`       |
