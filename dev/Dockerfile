@@ -13,6 +13,8 @@ RUN set -ex; \
     # Install Git and SSH client
     apk add --no-cache git openssh-client; \
     echo -e "Host *\n  StrictHostKeyChecking accept-new" > /etc/ssh/ssh_config; \
+    # Install corepack
+    npm install --no-update-notifier --prefix /usr/local/ --global corepack; \
     # NSS wrapper
     apk add --no-cache nss_wrapper; \
     touch \
