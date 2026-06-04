@@ -25,7 +25,8 @@ RUN set -ex; \
       "${NSS_WRAPPER_GROUP}" \
       "${NSS_WRAPPER_PASSWD}"
 
-ENV USER_HOME=/tmp \
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0 \
+    USER_HOME=/tmp \
     USER_GROUP=docker \
     USER_NAME=docker
 

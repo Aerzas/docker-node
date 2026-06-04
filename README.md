@@ -21,17 +21,18 @@ services:
 
 ## Environment Variables
 
-| Variable                   | Default value (base) | Default value (dev) |
-|----------------------------|----------------------|---------------------|
-| **Node**                   |                      |                     |
-| `APP_ROOT`                 | `/usr/src/app`       | `/usr/src/app`      |
-| `HOME`                     | `/home/node`         | `/home/node`        |
-| `NPM_CONFIG_PREFIX`        | `/home/node/.npm`    | `/home/node/.npm`   |
-| **NSS wrapper (dev only)** |                      |                     |
-| `LD_PRELOAD`               |                      | `libnss_wrapper.so` |
-| `NSS_WRAPPER_GROUP`        |                      | `/tmp/group`        |
-| `NSS_WRAPPER_PASSWD`       |                      | `/tmp/passwd`       |
-| **User (dev only)**        |                      |                     |
-| `USER_HOME`                |                      | `/tmp`              |
-| `USER_GROUP`               |                      | `docker`            |
-| `USER_NAME`                |                      | `docker`            |
+| Variable                          | Default value (base) | Default value (dev) |
+|-----------------------------------|----------------------|---------------------|
+| **Node**                          |                      |                     |
+| `APP_ROOT`                        | `/usr/src/app`       | `/usr/src/app`      |
+| `COREPACK_ENABLE_DOWNLOAD_PROMPT` |                      | `0`                 |
+| `HOME`                            | `/home/node`         | `/home/node`        |
+| `NPM_CONFIG_PREFIX`               | `/home/node/.npm`    | `/home/node/.npm`   |
+| **NSS wrapper (dev only)**        |                      |                     |
+| `LD_PRELOAD`                      |                      | `libnss_wrapper.so` |
+| `NSS_WRAPPER_GROUP`               |                      | `/tmp/group`        |
+| `NSS_WRAPPER_PASSWD`              |                      | `/tmp/passwd`       |
+| **User (dev only)**               |                      |                     |
+| `USER_HOME`                       |                      | `/tmp`              |
+| `USER_GROUP`                      |                      | `docker`            |
+| `USER_NAME`                       |                      | `docker`            |
