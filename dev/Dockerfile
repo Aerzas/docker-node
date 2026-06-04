@@ -23,7 +23,9 @@ RUN set -ex; \
       "${NSS_WRAPPER_PASSWD}"; \
     chmod u+rw,g+rw,o+rw \
       "${NSS_WRAPPER_GROUP}" \
-      "${NSS_WRAPPER_PASSWD}"
+      "${NSS_WRAPPER_PASSWD}"; \
+    # Cleanup npm folder
+    rm -R "${NPM_CONFIG_PREFIX}/"*
 
 ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0 \
     USER_HOME=/tmp \
